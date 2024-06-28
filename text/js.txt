@@ -1,0 +1,54 @@
+
+
+var websiteRecords=[];
+   
+if (localStorage.getItem('arr')!==null){
+    //console.log('here i');
+    websiteRecords=JSON.parse(localStorage.getItem('arr')) ;
+    addWebData(websiteRecords);
+}
+ 
+
+function addWeb() {
+    var websiteDetails={
+        name:siteName.value,
+        url:websiteUrl.value,
+    }
+    websiteRecords.push(websiteDetails)
+    //console.log(websiteRecords);
+    localStorage.setItem('arr',JSON.stringify(websiteRecords))
+    addWebData(websiteRecords);
+    clear();
+
+}
+
+function addWebData(arr) {
+    var container=''
+    for (var i=0 ; i<websiteRecords.length ; i++)
+        {
+            container+=`<tr>
+            <td>${i+1}</td>
+            <td>${arr[i].name}</td>
+            <td><button class="btn btn-sm btn-danger px-3" ><a href="https://${arr[i].url}" target="_blank" >Visit</a></button></td>
+            <td><button class="btn btn-sm btn-danger px-3 " onclick=removeWebsite(${i})>Delete</button></td>
+        </tr>
+           `
+        }
+
+    document.getElementById('addWebData').innerHTML=container ;    
+   // console.log(container);
+}
+
+function clear() {
+    siteName.value='';
+    websiteUrl.value='';
+//console.log('here i');
+}
+
+function removeWebsite(index) {
+     websiteRecords.splice(index,1);
+    localStorage.setItem('arr',JSON.stringify(websiteRecords))
+    addWebData(websiteRecords);
+
+//   console.log(index);
+}

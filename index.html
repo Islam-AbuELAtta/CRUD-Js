@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>addingCard</title>
+</head>
+
+<body>
+
+    <div class="w-100 mx-auto text-white text-center p-5">
+
+        <div class="inner w-100 p-5 text-secondary text-opacity-50">
+            <h2>product management System</h2>
+            <div class="form-floating mb-3 mt-4">
+                <input type="text" class="form-control" id="productName" placeholder="productName">
+                <label for="productName">productName</label>
+            </div>
+            <div class="form-floating mb-3 mt-4">
+                <input type="number" class="form-control" id="productPrice" placeholder="productPrice">
+                <label for="productPrice">productPrice</label>
+            </div>
+            <div class="form-floating mb-3 mt-4">
+                <input type="text" list="categories" class="form-control" id="productCategory"
+                    placeholder="productCategory">
+                <label for="productCategory">productCategory</label>
+                <datalist id="categories">
+                    <option value="Mobile">
+                    <option value="Laptop">
+                    <option value="Tv">
+                    <option value="Machine">
+                </datalist>
+            </div>
+            <div class="form-floating mb-3 mt-4">
+                <textarea class="form-control" id="productDescription" placeholder="productDescription"></textarea>
+                <label for="productDescription">productDescription</label>
+            </div>
+            <div class="form-floating mb-3 mt-4">
+                <input type="file" class="form-control" id="productFile" multiple placeholder="productFile">
+                <label for="productFile">productFile</label>
+            </div>
+            <button class="btn btn-sm btn-dark " id="add" onclick="addProduct()">submitProduct</button>
+            <button class="btn btn-sm btn-warning d-none" id="update" onclick="goodmorning()">updateProduct</button>
+
+            <table class="table mt-4"  >
+                <thead>
+                    <tr>
+                        <th>index</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Category</th>
+                        <th>Description</th>
+                        <th>Image</th>
+                        <th>Update</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="forProduct">
+                    <!-- <tr>
+                        <td>1</td>
+                        <td>iphone</td>
+                        <td>5000</td>
+                        <td>mobile</td>
+                        <td>good</td>
+                        <td><img src="img/work-1.jpg" alt=""></td>
+                        <td><button class="btn btn-sm btn-warning "> <i class="fa-solid fa-edit"></i> update</button></td>
+                        <td><button class="btn btn-sm btn-danger"> <i class="fa-solid fa-trash-alt"></i> delete</button></td>
+                    </tr> -->
+                </tbody>
+
+            </table>
+
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
